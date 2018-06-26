@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteBase /
+
+#Trailing Slash [start]
+RewriteCond %{REQUEST_URI} ^/[^\.]+[^/]$
+RewriteRule ^(.*)$ http://%{HTTP_HOST}/$1/ [L,R=301]
+#Trailing Slash [stop]
+
+#Rewrite all to index.php wirth param url [start]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+#Rewrite all to index.php wirth param url [stop]
