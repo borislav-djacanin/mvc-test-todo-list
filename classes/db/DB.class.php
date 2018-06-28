@@ -2,7 +2,7 @@
 class Db { 
 
 	function __construct() { 
-		$this->mysql = new mysqli('localhost', 'root', 'acke1996', 'compect') or die('problem'); 
+		$this->mysql = new mysqli('localhost', '', '', 'compect') or die('problem'); 
 	}
 
 	function add_new_todo( $todo ) {
