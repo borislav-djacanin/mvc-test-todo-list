@@ -1,6 +1,7 @@
 <?php
     require_once '../classes/core/Session.class.php';
     require_once '../classes/core/Router.class.php';
+    require_once '../classes/db/DB.class.php';
     
     use compect\mvctest\classes\core\Router;
     use compect\mvctest\classes\core\Session;
