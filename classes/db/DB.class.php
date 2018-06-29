@@ -1,8 +1,46 @@
 <?php 
+class create_DB {
+	const HOST = 'localhost';
+	const USER = 'root';
+	const PASW = 'acke1996';
+	const DATABASE = 'compect';
+	const TABLE = 'todo_list';
+
+	function __construct() { 
+		$this->mysql = new mysqli('localhost', 'root', 'acke1996') or die('problem'); 
+	}
+
+	function create_new_database_with_todo_list_table() {
+		$query = "CREATE DATABASE IF NOT EXISTS ".self::DATABASE." DEFAULT CHARACTER SET = 'utf8' DEFAULT COLLATE = 'utf8_general_ci';";
+		
+		echo $query;
+		
+		$result = $this->mysql->query( $query ) or die("ERROR with CREATE Database");
+
+		mysqli_select_db( $this->mysql, self::DATABASE);
+		
+		$sql = 'CREATE TABLE todo_list( '.
+		'id INT NOT NULL AUTO_INCREMENT, '.
+		'position INT NOT NULL, '.
+		'todo TEXT NOT NULL, '.
+		'primary key ( id ))';
+
+		echo "<br>";
+		echo $sql;
+		
+		$result = $this->mysql->query( $sql ) or die( "ERROR with CREATE TABLE todo_list");
+
+		if ( $result ) {
+			echo "Database and table todo_list created";
+		}
+
+	}
+}
+
 class Db { 
 
 	function __construct() { 
-		$this->mysql = new mysqli('localhost', '', '', 'compect') or die('problem'); 
+		$this->mysql = new mysqli('localhost', 'root', 'acke1996', 'compect') or die('problem'); 
 	}
 
 	function add_new_todo( $todo ) {
