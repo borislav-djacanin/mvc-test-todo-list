@@ -50,11 +50,11 @@ class Db {
 
 		$position = 0;
 
-		$query = 'INSERT INTO '.self::TABLE.' VALUES (NULL, '.$position.', "'.$todo.'" )';
-		$result = $this->mysql->query($query) or die("ERROR with INSERT INTO ".self::TABLE);
+		$query = 'INSERT INTO todo_list VALUES (NULL, '.$position.', "'.$todo.'" )';
+		$result = $this->mysql->query($query) or die("ERROR with INSERT INTO todo_list");
 		
-		$query = 'SELECT * FROM '.self::TABLE' WHERE todo LIKE "'.$todo.'"';
-		$result = $this->mysql->query($query) or die("ERROR with SELECT * FROM ".self::TABLE);
+		$query = 'SELECT * FROM todo_list WHERE todo LIKE "'.$todo.'"';
+		$result = $this->mysql->query($query) or die("ERROR with SELECT * FROM todo_list");
 
 		$row = $result->fetch_array();
 		$id = $row['id'];
@@ -62,13 +62,13 @@ class Db {
 		}
 
 	function delete_by_id( $id ) { 
-		$query = "DELETE from ".self::TABLE." WHERE id = $id";
-		$result = $this->mysql->query($query) or die("ERROR with DELETE from ".self::TABLE); 
+		$query = "DELETE from todo_list WHERE id = $id";
+		$result = $this->mysql->query($query) or die("ERROR with DELETE from todo_list"); 
 	}
 
 	function update_position( $id, $position ) {
-		$query = "UPDATE ".self::TABLE." SET position = $position WHERE id = $id;";
-		$result = $this->mysql->query($query) or die("ERROR with UPDATE ".self::TABLE." SET position");
+		$query = "UPDATE todo_list SET position = $position WHERE id = $id;";
+		$result = $this->mysql->query($query) or die("ERROR with UPDATE todo_list SET position");
 	}
 
 } // end class
