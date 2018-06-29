@@ -35,14 +35,14 @@ function addNewToDo() {
 
 			text = '';
 			text = text + '<div class="row" id="todo_'+id+'">';
-			text = text + '<div class="col-md-10">';
+			text = text + '<div class="col-xs-10">';
 			text = text + '<ul class="list-group">';
 			text = text + '<li class="list-group-item">';
 			text = text + todo;
 			text = text + '</li>';
 			text = text + '</ul>';
 			text = text + '</div>';
-			text = text + '<div class="col-md-2">';
+			text = text + '<div class="col-xs-2">';
 			text = text + '<i class="fas fa-minus fa-2x" onclick="myFunction('+id+')"></i>';
 			text = text + '</div>';
 			text = text + '</div>';

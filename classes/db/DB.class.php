@@ -23,8 +23,6 @@ class Db {
 	function delete_by_id( $id ) { 
 		$query = "DELETE from todo_list WHERE id = $id";
 		$result = $this->mysql->query($query) or die("ERROR with DELETE from todo_list"); 
-
-		#if($result) return 'Success'; 
 	}
 
 	function update_position( $id, $position ) {

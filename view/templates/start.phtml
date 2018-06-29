@@ -1,20 +1,21 @@
 <?= $this->template('partials/header') ?>
-	<div class="section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="page-header">
-						<h1>Compect GmbH
-							<small>ToDo List</small>
-						</h1>
-					</div>
+
+<div class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="page-header">
+					<h1>Compect GmbH
+						<small>ToDo List</small>
+					</h1>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="section">
-		<div class="container" id="todo_list">
-				
+</div>
+<div class="section">
+	<div class="container" id="todo_list">
+			
   
 <?php 
  
@@ -29,7 +30,7 @@ if( $results->num_rows ) {
 		$todo = $row->todo;
 		
 		echo '<div class="row" id="todo_'.$id.'">';
-		echo '<div class="col-md-10">';
+		echo '<div class="col-xs-10">';
 		echo '<ul class="list-group">';
 		echo '<li class="list-group-item">'; 
 		echo $todo;
@@ -38,31 +39,29 @@ if( $results->num_rows ) {
 		echo '</div>';
 		?>
 
-		<div class="col-md-2">
-			<i class="fas fa-minus fa-2x" onclick='deleteEntry( <?php echo $id; ?> )'></i>
-		</div>
-
-		</div>
+	<div class="col-xs-2">
+		<i class="fas fa-minus fa-2x" onclick='deleteEntry( <?php echo $id; ?> )'></i>
+	</div>
+</div>
 
 <?php
 	$x = $x+1;
 	} // end while 
-}
+} // end if
  
 ?>
-
-
-		</div>
 	</div>
+</div>
+
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-xs-12">
 				<form class="form-horizontal" role="form">
 					<div class="form-group">
-						<div class="col-md-10">
-							<input type="text" class="form-control" id="inputToDoTask" placeholder="Neuer TODO text">
+						<div class="col-xs-10">
+							<input type="text" class="form-control form-control-lg" id="inputToDoTask" placeholder="Neuer TODO text">
 						</div>
-						<div class="col-md-2">
+						<div class="col-xs-2">
 							<i class="fas fa-plus fa-2x" onclick="addNewToDo()"></i>
 						</div>
 					</div>
