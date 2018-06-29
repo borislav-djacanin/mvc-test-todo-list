@@ -43,7 +43,7 @@ function addNewToDo() {
 			text = text + '</ul>';
 			text = text + '</div>';
 			text = text + '<div class="col-xs-2">';
-			text = text + '<i class="fas fa-minus fa-2x" onclick="myFunction('+id+')"></i>';
+			text = text + '<i class="fas fa-minus fa-2x" onclick="deleteEntry('+id+')"></i>';
 			text = text + '</div>';
 			text = text + '</div>';
 
